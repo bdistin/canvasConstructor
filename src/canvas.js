@@ -141,6 +141,22 @@ class CanvasConstructor {
     }
 
     /**
+     * Add a circle.
+     * @param {number} x                   The position x in the center of the circle.
+     * @param {number} y                   The position y in the center of the ircle.
+     * @param {number} radius              The radius for the clip.
+     * @returns {CanvasConstructor}
+     * @chainable
+     */
+    addCircle(x, y, radius) {
+        this.context.beginPath();
+        this.context.arc(x, y, radius, 0, Math.PI * 2, false);
+        this.context.closePath();
+        this.context.fill();
+        return this;
+    }
+
+    /**
      * Add a text.
      * @param {string} text The text to write.
      * @param {number} x    The position x to start drawing the element.
